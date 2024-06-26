@@ -1,4 +1,4 @@
-# wsafrontend
+# wsa
 
 A new Flutter project.
 

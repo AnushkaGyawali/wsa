@@ -1,6 +1,6 @@
 {
-    "name": "wsafrontend",
-    "short_name": "wsafrontend",
+    "name": "wsa",
+    "short_name": "wsa",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

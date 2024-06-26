@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "750206471811",
+    "project_id": "wsap-59ae4",
+    "storage_bucket": "wsap-59ae4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750206471811:android:cd6a7ccb5480396fc515b6",
+        "android_client_info": {
+          "package_name": "com.example.wsa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ16BDOauwSypqAaDE7yo6v8uM0BIFoPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
