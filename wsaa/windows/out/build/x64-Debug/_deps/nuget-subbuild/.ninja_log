@@ -1,0 +1,24 @@
+# ninja log v5
+1	59	7422422172943199	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-mkdir	6eb6a4a0e24b8302
+1	59	7422422172943199	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-mkdir	6eb6a4a0e24b8302
+59	13217	7422422304518048	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-download	916e72052140ecd5
+59	13217	7422422304518048	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-download	916e72052140ecd5
+13217	13268	7422422305026185	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-update	ef8aa76911d8705c
+13217	13268	7422422305026185	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-update	ef8aa76911d8705c
+13269	14001	7422422312341938	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-patch	86efde7b6fc443dc
+13269	14001	7422422312341938	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-patch	86efde7b6fc443dc
+14001	14083	7422422313186168	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-copyfile	6f183cc939fcea92
+14001	14083	7422422313186168	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-src/nuget.exe	6f183cc939fcea92
+14001	14083	7422422313186168	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-copyfile	6f183cc939fcea92
+14083	14131	7422422313664083	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-configure	4410000fa168cbcb
+14083	14131	7422422313664083	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-configure	4410000fa168cbcb
+14131	14176	7422422314121535	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-build	655923a47b3bed26
+14131	14176	7422422314121535	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-build	655923a47b3bed26
+14176	14224	7422422314592359	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-install	49c5681a6af4ed8c
+14176	14224	7422422314592359	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-install	49c5681a6af4ed8c
+14224	14280	7422422315153222	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-test	4898591a71b7c8b5
+14224	14280	7422422315153222	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-test	4898591a71b7c8b5
+14280	14347	7422422315819651	CMakeFiles/nuget-populate-complete	3f927d0429f3839c
+14280	14347	7422422315819651	nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-done	3f927d0429f3839c
+14280	14347	7422422315819651	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/CMakeFiles/nuget-populate-complete	3f927d0429f3839c
+14280	14347	7422422315819651	C:/Users/gyawa/wsaa/windows/out/build/x64-Debug/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/nuget-populate-done	3f927d0429f3839c
