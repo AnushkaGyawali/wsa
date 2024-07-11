@@ -1,30 +1,27 @@
 import 'package:volume_watcher/volume_watcher.dart';
 
 class HardwareButtonsService {
-  int _volumeUpPressCount = 0;
-  int _volumeDownPressCount = 0;
+  int _lastVolumeLevel = 0;
 
-  void startListening(Function onButtonsPressed) {
+  void startListening(Function(VolumeButtonEvent) onButtonEvent) {
     VolumeWatcher.addListener((volume) {
-      if (volume == VolumeDirection.Up) {
-        _volumeUpPressCount++;
-      } else if (volume == VolumeDirection.Down) {
-        _volumeDownPressCount++;
+      if (volume > _lastVolumeLevel) {
+        // Volume increased, handle volume up event
+        onButtonEvent(VolumeButtonEvent.VOLUME_UP);
+      } else if (volume < _lastVolumeLevel) {
+        // Volume decreased, handle volume down event
+        onButtonEvent(VolumeButtonEvent.VOLUME_DOWN);
       }
-
-      if (_volumeUpPressCount >= 3 && _volumeDownPressCount >= 3) {
-        onButtonsPressed();
-        _resetCounts();
-      }
+      _lastVolumeLevel = volume; // Update the last known volume level
     });
   }
 
-  void _resetCounts() {
-    _volumeUpPressCount = 0;
-    _volumeDownPressCount = 0;
-  }
-
   void stopListening() {
-    VolumeWatcher.removeListener();
+    VolumeWatcher.removeListener(0); // Replace with the appropriate listener ID
   }
+}
+
+enum VolumeButtonEvent {
+  VOLUME_UP,
+  VOLUME_DOWN,
 }

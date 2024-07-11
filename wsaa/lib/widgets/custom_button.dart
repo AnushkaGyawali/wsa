@@ -13,6 +13,10 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => onPressed(),
         child: Text(text),
+        style: ElevatedButton.styleFrom(
+          minimumSize: Size(double.infinity, 50), // Full width button
+          textStyle: TextStyle(fontSize: 18), // Larger text for better readability
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'auth/login_page.dart';
+import 'auth/signup_page.dart';
 import 'home/home_page.dart';
 import 'auth/auth_service.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'WSA',
+      title: 'WSAA',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

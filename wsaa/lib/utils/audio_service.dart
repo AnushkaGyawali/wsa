@@ -1,17 +1,13 @@
 import 'package:audioplayers/audioplayers.dart';
 
 class AudioService {
-  late AudioPlayer _audioPlayer;
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
-  void initialize() {
-    _audioPlayer = AudioPlayer();
+  void playAlarmSound() {
+    _audioPlayer.play(UrlSource('path_to_alarm_sound.mp3'));
   }
 
-  void playAlarm() {
-    _audioPlayer.play('path_to_alarm_sound.mp3', isLocal: true);
-  }
-
-  void dispose() {
-    _audioPlayer.dispose();
+  void stopAlarmSound() {
+    _audioPlayer.stop();
   }
 }

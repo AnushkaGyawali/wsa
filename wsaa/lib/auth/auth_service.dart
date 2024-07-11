@@ -4,10 +4,12 @@ import '../home/home_page.dart';
 import 'login_page.dart';
 
 class AuthService {
-  // Determine if the user is authenticated
-  handleAuth() {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  // Handle Auth
+  Widget handleAuth() {
     return StreamBuilder(
-      stream: FirebaseAuth.instance.authStateChanges(),
+      stream: _auth.authStateChanges(),
       builder: (BuildContext context, snapshot) {
         if (snapshot.hasData) {
           return HomePage();
@@ -18,18 +20,18 @@ class AuthService {
     );
   }
 
-  // Sign out
-  void signOut() {
-    FirebaseAuth.instance.signOut();
+  // Sign Out
+  Future<void> signOut() async {
+    await _auth.signOut();
   }
 
-  // Sign in
-  void signIn(String email, String password) {
-    FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+  // Sign In
+  Future<void> signIn(String email, String password) async {
+    await _auth.signInWithEmailAndPassword(email: email, password: password);
   }
 
-  // Sign up
-  void signUp(String email, String password) {
-    FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+  // Sign Up
+  Future<void> signUp(String email, String password) async {
+    await _auth.createUserWithEmailAndPassword(email: email, password: password);
   }
 }

@@ -1,51 +1,35 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../utils/shake_service.dart';
-import '../utils/hardware_buttons_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../utils/camera_service.dart';
 import '../utils/audio_service.dart';
 
-class SosService {
-  final ShakeService _shakeService = ShakeService();
-  final HardwareButtonsService _hardwareButtonsService = HardwareButtonsService();
+class SOSService {
   final CameraService _cameraService = CameraService();
   final AudioService _audioService = AudioService();
 
-  void initShakeDetector(Function onShake) {
-    _shakeService.startListening(onShake);
-  }
+  Future<void> handleSOS(BuildContext context) async {
+    // Start video recording
+    await _cameraService.startVideoRecording();
 
-  void initHardwareButtonsListener(Function onButtonsPressed) {
-    _hardwareButtonsService.startListening(onButtonsPressed);
-  }
+    // Play alarm sound
+    _audioService.playAlarmSound();
 
-  void initCamera() {
-    _cameraService.initialize();
-  }
+    // Get current location
+    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
 
-  void initAudioPlayer() {
-    _audioService.initialize();
-  }
+    // Save to Firestore or send SOS message
+    FirebaseFirestore.instance.collection('sos').add({
+      'latitude': position.latitude,
+      'longitude': position.longitude,
+      'timestamp': Timestamp.now(),
+    });
 
-  void sendSOS(Position? position) {
-    if (position != null) {
-      String message = "SOS! I need help. My location is: https://maps.google.com/?q=${position.latitude},${position.longitude}";
-      launch("sms:+recipient_phone_number?body=$message");
-    }
-  }
-
-  void startRecording() {
-    _cameraService.startVideoRecording();
-  }
-
-  void playAlarm() {
-    _audioService.playAlarm();
+    // Implement additional SOS logic here
   }
 
   void dispose() {
-    _shakeService.stopListening();
-    _hardwareButtonsService.stopListening();
     _cameraService.dispose();
-    _audioService.dispose();
+    _audioService.stopAlarmSound();
   }
 }

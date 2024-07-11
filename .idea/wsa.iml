@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/wsa/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/wsa/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/wsa/build" />
+      <excludeFolder url="file://$MODULE_DIR$/wsa/wsafrontend/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/wsa/wsafrontend/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/wsa/wsafrontend/build" />
+      <excludeFolder url="file://$MODULE_DIR$/wsaa/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/wsaa/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/wsaa/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

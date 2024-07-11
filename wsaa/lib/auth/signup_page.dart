@@ -1,41 +1,33 @@
 import 'package:flutter/material.dart';
 import 'auth_service.dart';
-import '../widgets/custom_text_field.dart';
-import '../widgets/custom_button.dart';
 
-class SignupPage extends StatefulWidget {
-  @override
-  _SignupPageState createState() => _SignupPageState();
-}
-
-class _SignupPageState extends State<SignupPage> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  final _authService = AuthService();
+class SignupPage extends StatelessWidget {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sign Up'),
-      ),
+      appBar: AppBar(title: Text('Sign Up')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          children: [
-            CustomTextField(controller: _emailController, hintText: 'Email'),
-            CustomTextField(controller: _passwordController, hintText: 'Password', obscureText: true),
-            CustomButton(
-              text: 'Sign Up',
-              onPressed: () {
-                _authService.signUp(_emailController.text, _passwordController.text);
-              },
+          children: <Widget>[
+            TextField(
+              controller: _emailController,
+              decoration: InputDecoration(labelText: 'Email'),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
+            TextField(
+              controller: _passwordController,
+              decoration: InputDecoration(labelText: 'Password'),
+              obscureText: true,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await _authService.signUp(_emailController.text, _passwordController.text);
               },
-              child: Text('Already have an account? Login'),
+              child: Text('Sign Up'),
             ),
           ],
         ),

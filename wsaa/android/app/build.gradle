@@ -1,7 +1,7 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
-    id "com.google.gms.google-services" version "4.4.2" // Add the Google services Gradle plugin
+    id "com.google.gms.google-services" version "4.4.2" // Google services Gradle plugin
     id "dev.flutter.flutter-gradle-plugin"
 }
 
@@ -24,20 +24,20 @@ if (flutterVersionName == null) {
 }
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
-
+    compileSdkVersion 31 // Adjusted to latest compileSdkVersion
     defaultConfig {
         applicationId "com.example.wsaa"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        minSdkVersion 21 // Adjusted to minimum supported SDK version
+        targetSdkVersion 31 // Adjusted to target SDK version
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled true // Add this line if needed
+        multiDexEnabled true // Enable multidex if needed
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.debug
+            // Configure signing if required for release builds
+            // signingConfig signingConfigs.debug
         }
     }
 
@@ -48,14 +48,19 @@ android {
 }
 
 flutter {
-    source '../..'
+    source '../..' // Adjusted source path if needed
 }
 
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:33.1.1') // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.1.1') // Firebase BoM for managing versions
 
     // Add Firebase SDKs you want to use
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
-    // Add more Firebase SDKs as needed
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-messaging'
+
+    // Other dependencies as needed
 }
+
